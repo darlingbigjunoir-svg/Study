@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goals – StudyTrack</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="logo">
+    <i class="fas fa-book-open-reader"></i>
+    <span>StudyTrack</span>
+  </div>
+  <a class="nav-item" href="index.html"><i class="fas fa-house"></i> Dashboard</a>
+  <a class="nav-item" href="subject.html"><i class="fas fa-layer-group"></i> Subjects</a>
+  <a class="nav-item" href="tasks.html"><i class="fas fa-list-check"></i> Tasks</a>
+  <a class="nav-item" href="calendar.html"><i class="fas fa-calendar-days"></i> Calendar</a>
+  <a class="nav-item" href="notes.html"><i class="fas fa-note-sticky"></i> Notes</a>
+  <a class="nav-item" href="flashcards.html"><i class="fas fa-clone"></i> Flashcards</a>
+  <a class="nav-item" href="progress.html"><i class="fas fa-chart-line"></i> Progress</a>
+  <a class="nav-item active" href="goals.html"><i class="fas fa-bullseye"></i> Goals</a>
+  <a class="nav-item" href="settings.html"><i class="fas fa-gear"></i> Settings</a>
+  <div class="sidebar-bottom">
+    <div class="avatar">S</div>
+    <div class="avatar-info">
+      <span>Student</span>
+      <small>View Profile</small>
+    </div>
+  </div>
+</aside>
+
+<!-- Main Content -->
+<main class="main">
+  <div class="page active" id="page-goals">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div>
+        <h1><i class="fas fa-bullseye" style="color:#4f46e5;margin-right:8px"></i>Goals</h1>
+        <p>Set and track your goals.</p>
+      </div>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> New Goal</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab">All</div>
+      <div class="tab active">Active</div>
+      <div class="tab">Completed</div>
+    </div>
+
+    <!-- Goals List -->
+    <div class="card">
+
+      <!-- Goal 1: Study 20 hours -->
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-title">Study 20 hours this week</div>
+          <div style="display:flex;align-items:center;gap:16px;margin-left:auto">
+            <span style="font-size:13px;color:#6b7280">70%</span>
+            <span style="font-size:13px;color:#6b7280">14h 32m / 20h</span>
+            <span style="font-size:13px;color:#6b7280">Due: May 19, 2024</span>
+            <i class="fas fa-chevron-right" style="color:#d1d5db;font-size:12px"></i>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#9ca3af;margin-bottom:5px">Progress</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:70%;background:#4f46e5"></div>
+        </div>
+      </div>
+
+      <!-- Goal 2: Complete 30 tasks -->
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-title">Complete 30 tasks this week</div>
+          <div style="display:flex;align-items:center;gap:16px;margin-left:auto">
+            <span style="font-size:13px;color:#6b7280">80%</span>
+            <span style="font-size:13px;color:#6b7280">28 / 30</span>
+            <span style="font-size:13px;color:#6b7280">Due: May 19, 2024</span>
+            <i class="fas fa-chevron-right" style="color:#d1d5db;font-size:12px"></i>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#9ca3af;margin-bottom:5px">Progress</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:80%;background:#10b981"></div>
+        </div>
+      </div>
+
+      <!-- Goal 3: Read 2 books -->
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-title">Read 2 books this month</div>
+          <div style="display:flex;align-items:center;gap:16px;margin-left:auto">
+            <span style="font-size:13px;color:#6b7280">50%</span>
+            <span style="font-size:13px;color:#6b7280">1 / 2</span>
+            <span style="font-size:13px;color:#6b7280">Due: May 31, 2024</span>
+            <i class="fas fa-chevron-right" style="color:#d1d5db;font-size:12px"></i>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#9ca3af;margin-bottom:5px">Progress</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:50%;background:#f59e0b"></div>
+        </div>
+      </div>
+
+      <!-- Goal 4: 7-day streak (Completed) -->
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-title">Maintain a 7-day study streak</div>
+          <div style="display:flex;align-items:center;gap:16px;margin-left:auto">
+            <span style="font-size:13px;color:#6b7280">100%</span>
+            <span style="font-size:13px;color:#6b7280">7 / 7 days</span>
+            <span class="badge badge-green" style="display:flex;align-items:center;gap:4px">
+              Completed! <i class="fas fa-circle-check" style="font-size:11px"></i>
+            </span>
+            <i class="fas fa-chevron-right" style="color:#d1d5db;font-size:12px"></i>
+          </div>
+        </div>
+        <div style="font-size:11px;color:#9ca3af;margin-bottom:5px">Progress</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:100%;background:#10b981"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script src="js/scrpit.js"></script>
+</body>
+</html>
