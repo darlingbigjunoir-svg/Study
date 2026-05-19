@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flashcards - StudyTrack</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- App Layout -->
+  <div>
+
+    <!-- Sidebar -->
+    <nav>
+      <h2><i class="fa-solid fa-book-open"></i> StudyTrack</h2>
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa-solid fa-layer-group"></i> Subjects</a></li>
+        <li><a href="#"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+        <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Calendar</a></li>
+        <li><a href="#"><i class="fa-solid fa-note-sticky"></i> Notes</a></li>
+        <li><a href="#"><i class="fa-solid fa-clone"></i> Flashcards</a></li>
+        <li><a href="#"><i class="fa-solid fa-chart-line"></i> Progress</a></li>
+        <li><a href="#"><i class="fa-solid fa-bullseye"></i> Goals</a></li>
+        <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+      <!-- Page Header -->
+      <header>
+        <div>
+          <h1><i class="fa-solid fa-clone"></i> Flashcards</h1>
+          <p>Study with flashcards.</p>
+        </div>
+        <button type="button">
+          <i class="fa-solid fa-plus"></i> New Flashcard
+        </button>
+      </header>
+
+      <!-- Filters & Tabs -->
+      <section>
+        <!-- Subject Dropdown -->
+        <label for="subject-select"><i class="fa-solid fa-book"></i></label>
+        <select id="subject-select" name="subject">
+          <option value="calculus">Calculus</option>
+          <option value="physics">Physics</option>
+          <option value="chemistry">Chemistry</option>
+        </select>
+
+        <!-- Tab Navigation -->
+        <nav>
+          <a href="#"><i class="fa-solid fa-border-all"></i> All (24)</a>
+          <a href="#"><i class="fa-solid fa-rotate"></i> To Review (6)</a>
+          <a href="#"><i class="fa-solid fa-check-circle"></i> Learned (18)</a>
+        </nav>
+      </section>
+
+      <!-- Flashcard Viewer -->
+      <section>
+
+        <p><i class="fa-regular fa-square"></i> Front</p>
+
+        <!-- Card Navigation -->
+        <div>
+          <button type="button" aria-label="Previous card">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <!-- Card Face -->
+          <div>
+            <h2>What is the derivative of sin x?</h2>
+            <p>
+              <i class="fa-regular fa-eye"></i> Click to reveal
+            </p>
+          </div>
+
+          <button type="button" aria-label="Next card">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Card Progress -->
+        <p>
+          <i class="fa-solid fa-bars-progress"></i> 1 / 24
+        </p>
+        <progress value="1" max="24">1 of 24</progress>
+
+      </section>
+
+      <!-- Rating Buttons -->
+      <section>
+        <button type="button">
+          <i class="fa-solid fa-xmark"></i> Hard
+        </button>
+        <button type="button">
+          <i class="fa-regular fa-face-meh"></i> Good
+        </button>
+        <button type="button">
+          <i class="fa-solid fa-check"></i> Easy
+        </button>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
