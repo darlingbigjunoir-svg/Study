@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar – StudyTrack</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="logo">
+    <i class="fas fa-book-open-reader"></i>
+    <span>StudyTrack</span>
+  </div>
+  <a class="nav-item" href="index.html"><i class="fas fa-house"></i> Dashboard</a>
+  <a class="nav-item" href="subject.html"><i class="fas fa-layer-group"></i> Subjects</a>
+  <a class="nav-item" href="tasks.html"><i class="fas fa-list-check"></i> Tasks</a>
+  <a class="nav-item active" href="calendar.html"><i class="fas fa-calendar-days"></i> Calendar</a>
+  <a class="nav-item" href="notes.html"><i class="fas fa-note-sticky"></i> Notes</a>
+  <a class="nav-item" href="flashcards.html"><i class="fas fa-clone"></i> Flashcards</a>
+  <a class="nav-item" href="progress.html"><i class="fas fa-chart-line"></i> Progress</a>
+  <a class="nav-item" href="goals.html"><i class="fas fa-bullseye"></i> Goals</a>
+  <a class="nav-item" href="settings.html"><i class="fas fa-gear"></i> Settings</a>
+  <div class="sidebar-bottom">
+    <div class="avatar">S</div>
+    <div class="avatar-info">
+      <span>Student</span>
+      <small>View Profile</small>
+    </div>
+  </div>
+</aside>
+
+<!-- Main Content -->
+<main class="main">
+  <div class="page active" id="page-calendar">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div>
+        <h1><i class="fas fa-calendar-days" style="color:#4f46e5;margin-right:8px"></i>Calendar</h1>
+        <p>View your schedule and study plan.</p>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-primary" style="font-size:12px;padding:6px 14px">Month</button>
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151;font-size:12px;padding:6px 14px">Week</button>
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151;font-size:12px;padding:6px 14px">Day</button>
+      </div>
+    </div>
+
+    <!-- Calendar Card -->
+    <div class="card">
+
+      <!-- Month Navigation -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div style="display:flex;align-items:center;gap:10px">
+          <strong style="font-size:15px">May 2024</strong>
+          <button class="btn btn-primary" style="font-size:11px;padding:5px 12px">Today</button>
+        </div>
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Day Names -->
+      <div class="cal-grid">
+        <div class="cal-day-name">Sun</div>
+        <div class="cal-day-name">Mon</div>
+        <div class="cal-day-name">Tue</div>
+        <div class="cal-day-name">Wed</div>
+        <div class="cal-day-name">Thu</div>
+        <div class="cal-day-name">Fri</div>
+        <div class="cal-day-name">Sat</div>
+
+        <!-- Week 1: Apr 28 – May 4 -->
+        <div class="cal-day muted">28</div>
+        <div class="cal-day muted">29</div>
+        <div class="cal-day muted">30</div>
+        <div class="cal-day">1</div>
+        <div class="cal-day">2</div>
+        <div class="cal-day">3</div>
+        <div class="cal-day">4</div>
+
+        <!-- Week 2: May 5–11 -->
+        <div class="cal-day">5</div>
+        <div class="cal-day">6</div>
+        <div class="cal-day has-event">
+          7
+          <div class="cal-event-block" style="background:#ede9fe;color:#4f46e5">
+            <i class="fas fa-square-root-variable" style="font-size:9px"></i> Calculus 2:00 PM
+          </div>
+        </div>
+        <div class="cal-day">8</div>
+        <div class="cal-day">9</div>
+        <div class="cal-day has-event">
+          10
+          <div class="cal-event-block" style="background:#fef3c7;color:#d97706">
+            <i class="fas fa-atom" style="font-size:9px"></i> Physics 1:00 PM
+          </div>
+        </div>
+        <div class="cal-day">11</div>
+
+        <!-- Week 3: May 12–18 -->
+        <div class="cal-day">12</div>
+        <div class="cal-day has-event">
+          13
+          <div class="cal-event-block" style="background:#d1fae5;color:#059669">
+            <i class="fas fa-dna" style="font-size:9px"></i> Biology 10:00 AM
+          </div>
+        </div>
+        <div class="cal-day">14</div>
+        <div class="cal-day today">15</div>
+        <div class="cal-day">16</div>
+        <div class="cal-day has-event">
+          17
+          <div class="cal-event-block" style="background:#ede9fe;color:#7c3aed">
+            <i class="fas fa-flask" style="font-size:9px"></i> Chemistry 11:00 AM
+          </div>
+        </div>
+        <div class="cal-day">18</div>
+
+        <!-- Week 4: May 19–25 -->
+        <div class="cal-day has-event">
+          19
+          <div class="cal-event-block" style="background:#fee2e2;color:#dc2626">
+            <i class="fas fa-landmark" style="font-size:9px"></i> History 3:00 PM
+          </div>
+        </div>
+        <div class="cal-day">20</div>
+        <div class="cal-day">21</div>
+        <div class="cal-day">22</div>
+        <div class="cal-day">23</div>
+        <div class="cal-day">24</div>
+        <div class="cal-day">25</div>
+
+        <!-- Week 5: May 26 – Jun 1 -->
+        <div class="cal-day">26</div>
+        <div class="cal-day">27</div>
+        <div class="cal-day">28</div>
+        <div class="cal-day">29</div>
+        <div class="cal-day">30</div>
+        <div class="cal-day">31</div>
+        <div class="cal-day muted">1</div>
+      </div>
+
+      <!-- Upcoming Events List -->
+      <div style="margin-top:20px;border-top:1px solid #e8eaf0;padding-top:16px">
+        <p style="font-size:12px;font-weight:600;color:#6b7280;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px">
+          <i class="fas fa-clock" style="margin-right:4px"></i> Upcoming Events
+        </p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+
+          <div class="cal-event-chip" style="background:#ede9fe;color:#4f46e5">
+            <i class="fas fa-square-root-variable" style="font-size:10px;margin-right:6px"></i>
+            <span><strong>Calculus</strong> — 2:00 PM</span>
+            <span style="margin-left:auto;font-size:11px;opacity:.7">May 7</span>
+          </div>
+
+          <div class="cal-event-chip" style="background:#d1fae5;color:#059669">
+            <i class="fas fa-dna" style="font-size:10px;margin-right:6px"></i>
+            <span><strong>Biology</strong> — 10:00 AM</span>
+            <span style="margin-left:auto;font-size:11px;opacity:.7">May 13</span>
+          </div>
+
+          <div class="cal-event-chip" style="background:#fef3c7;color:#d97706">
+            <i class="fas fa-atom" style="font-size:10px;margin-right:6px"></i>
+            <span><strong>Physics</strong> — 1:00 PM</span>
+            <span style="margin-left:auto;font-size:11px;opacity:.7">May 10</span>
+          </div>
+
+          <div class="cal-event-chip" style="background:#fee2e2;color:#dc2626">
+            <i class="fas fa-landmark" style="font-size:10px;margin-right:6px"></i>
+            <span><strong>History</strong> — 3:00 PM</span>
+            <span style="margin-left:auto;font-size:11px;opacity:.7">May 19</span>
+          </div>
+
+          <div class="cal-event-chip" style="background:#ede9fe;color:#7c3aed">
+            <i class="fas fa-flask" style="font-size:10px;margin-right:6px"></i>
+            <span><strong>Chemistry</strong> — 11:00 AM</span>
+            <span style="margin-left:auto;font-size:11px;opacity:.7">May 17</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script src="js/scrpit.js"></script>
+</body>
+</html>
