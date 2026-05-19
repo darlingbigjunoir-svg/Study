@@ -10,9 +10,622 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="logo">
+    <i class="fas fa-book-open-reader"></i>
+    <span>StudyTrack</span>
+  </div>
+  <a class="nav-item active" onclick="showPage('dashboard')"><i class="fas fa-house"></i> Dashboard</a>
+  <a class="nav-item" onclick="showPage('subjects')"><i class="fas fa-layer-group"></i> Subjects</a>
+  <a class="nav-item" onclick="showPage('tasks')"><i class="fas fa-list-check"></i> Tasks</a>
+  <a class="nav-item" onclick="showPage('calendar')"><i class="fas fa-calendar-days"></i> Calendar</a>
+  <a class="nav-item" onclick="showPage('notes')"><i class="fas fa-note-sticky"></i> Notes</a>
+  <a class="nav-item" onclick="showPage('flashcards')"><i class="fas fa-clone"></i> Flashcards</a>
+  <a class="nav-item" onclick="showPage('progress')"><i class="fas fa-chart-line"></i> Progress</a>
+  <a class="nav-item" onclick="showPage('goals')"><i class="fas fa-bullseye"></i> Goals</a>
+  <a class="nav-item" onclick="showPage('settings')"><i class="fas fa-gear"></i> Settings</a>
+  <div class="sidebar-bottom">
+    <div class="avatar">A</div>
+    <div class="avatar-info">
+      <span>Alex</span>
+      <small>View Profile</small>
+    </div>
+  </div>
+</aside>
+
+<!-- Main Content -->
+<main class="main">
+
+  <!-- DASHBOARD -->
+  <div class="page active" id="page-dashboard">
+    <div class="page-header">
+      <div>
+        <h1>Welcome back, Student! 👋</h1>
+        <p>Let's keep up the great work.</p>
+      </div>
+      <div style="display:flex;gap:8px">
+        <div style="position:relative;cursor:pointer">
+          <i class="fas fa-bell" style="font-size:18px;color:#6b7280"></i>
+          <span style="position:absolute;top:-4px;right:-4px;width:8px;height:8px;background:#ef4444;border-radius:50%"></span>
+        </div>
+        &nbsp;&nbsp;
+        <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Task</button>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="label"><i class="fas fa-clock" style="color:#4f46e5"></i> Study Time</div>
+        <div class="value">14h 32m</div>
+        <div class="sub"><i class="fas fa-arrow-up"></i> 2h 15m this week</div>
+      </div>
+      <div class="stat-card">
+        <div class="label"><i class="fas fa-circle-check" style="color:#10b981"></i> Tasks Completed</div>
+        <div class="value">28</div>
+        <div class="sub"><i class="fas fa-arrow-up"></i> +12 this week</div>
+      </div>
+      <div class="stat-card">
+        <div class="label"><i class="fas fa-book" style="color:#f59e0b"></i> Subjects</div>
+        <div class="value">6</div>
+        <div class="sub" style="color:#6b7280">Active subjects</div>
+      </div>
+      <div class="stat-card">
+        <div class="label"><i class="fas fa-fire" style="color:#ef4444"></i> Day Streak</div>
+        <div class="value">7</div>
+        <div class="sub fire"><i class="fas fa-fire"></i> Keep it going!</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="fas fa-chart-bar" style="color:#4f46e5;margin-right:6px"></i>Study Time Overview</h3>
+          <span style="font-size:12px;color:#6b7280">This Week</span>
+        </div>
+        <div class="bar-chart">
+          <div class="bar-wrap"><div class="bar" style="height:55%"></div><span class="bar-label">Mon</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:40%"></div><span class="bar-label">Tue</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:75%"></div><span class="bar-label">Wed</span></div>
+          <div class="bar-wrap"><div class="bar active" style="height:90%"></div><span class="bar-label">Thu</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:35%"></div><span class="bar-label">Fri</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:10%"></div><span class="bar-label">Sat</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:10%"></div><span class="bar-label">Sun</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="fas fa-list" style="color:#4f46e5;margin-right:6px"></i>Upcoming Tasks</h3>
+          <a href="#">View All</a>
+        </div>
+        <div class="task-item">
+          <div class="task-check"></div>
+          <div class="task-info"><div class="title">Calculus – Problem Set 5</div><div class="meta"><i class="fas fa-tag" style="color:#4f46e5;font-size:9px"></i> Calculus</div></div>
+          <span class="badge badge-red">Today</span>
+        </div>
+        <div class="task-item">
+          <div class="task-check"></div>
+          <div class="task-info"><div class="title">Biology – Chapter 12 Notes</div><div class="meta"><i class="fas fa-tag" style="color:#10b981;font-size:9px"></i> Biology</div></div>
+          <span class="badge badge-gray">Tomorrow</span>
+        </div>
+        <div class="task-item">
+          <div class="task-check"></div>
+          <div class="task-info"><div class="title">Physics – Lab Report</div><div class="meta"><i class="fas fa-tag" style="color:#f59e0b;font-size:9px"></i> Physics</div></div>
+          <span class="badge badge-gray">May 25</span>
+        </div>
+        <div class="task-item">
+          <div class="task-check"></div>
+          <div class="task-info"><div class="title">History – Essay Draft</div><div class="meta"><i class="fas fa-tag" style="color:#ef4444;font-size:9px"></i> History</div></div>
+          <span class="badge badge-gray">May 27</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="fas fa-bars-progress" style="color:#4f46e5;margin-right:6px"></i>Subject Progress</h3>
+          <a href="#">View All</a>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#4f46e5"><i class="fas fa-square-root-variable"></i></div>
+          <div class="progress-info">
+            <div class="name">Calculus</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:75%;background:#4f46e5"></div></div>
+          </div>
+          <span class="progress-pct">75%</span>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#10b981"><i class="fas fa-dna"></i></div>
+          <div class="progress-info">
+            <div class="name">Biology</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:60%;background:#10b981"></div></div>
+          </div>
+          <span class="progress-pct">60%</span>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#f59e0b"><i class="fas fa-atom"></i></div>
+          <div class="progress-info">
+            <div class="name">Physics</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:40%;background:#f59e0b"></div></div>
+          </div>
+          <span class="progress-pct">40%</span>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#ef4444"><i class="fas fa-landmark"></i></div>
+          <div class="progress-info">
+            <div class="name">History</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:65%;background:#ef4444"></div></div>
+          </div>
+          <span class="progress-pct">65%</span>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#8b5cf6"><i class="fas fa-flask"></i></div>
+          <div class="progress-info">
+            <div class="name">Chemistry</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:55%;background:#8b5cf6"></div></div>
+          </div>
+          <span class="progress-pct">55%</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="fas fa-chart-pie" style="color:#4f46e5;margin-right:6px"></i>Study Time by Subject</h3>
+        </div>
+        <div class="donut-wrap">
+          <svg class="donut-svg" width="110" height="110" viewBox="0 0 110 110">
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#e8eaf0" stroke-width="18"/>
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#4f46e5" stroke-width="18" stroke-dasharray="188 251" stroke-dashoffset="63" transform="rotate(-90 55 55)"/>
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#10b981" stroke-width="18" stroke-dasharray="69 251" stroke-dashoffset="-125" transform="rotate(-90 55 55)"/>
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#f59e0b" stroke-width="18" stroke-dasharray="45 251" stroke-dashoffset="-194" transform="rotate(-90 55 55)"/>
+            <text x="55" y="59" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">14h 32m</text>
+          </svg>
+          <div class="donut-legend">
+            <div class="donut-legend-item"><div class="dot" style="background:#4f46e5"></div><span style="font-size:12px">Calculus — 6h 30m (44%)</span></div>
+            <div class="donut-legend-item"><div class="dot" style="background:#10b981"></div><span style="font-size:12px">Biology — 3h 20m (23%)</span></div>
+            <div class="donut-legend-item"><div class="dot" style="background:#f59e0b"></div><span style="font-size:12px">Physics — 2h 45m (19%)</span></div>
+            <div class="donut-legend-item"><div class="dot" style="background:#ef4444"></div><span style="font-size:12px">History — 1h 50m (13%)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBJECTS -->
+  <div class="page" id="page-subjects">
+    <div class="page-header">
+      <div><h1><i class="fas fa-layer-group" style="color:#4f46e5;margin-right:8px"></i>Subjects</h1><p>Manage and track all your subjects.</p></div>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Subject</button>
+    </div>
+    <div class="card">
+      <table class="subjects-table">
+        <thead>
+          <tr><th>Subject</th><th>Progress</th><th>Study Time</th><th>Tasks</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div style="display:flex;align-items:center;gap:10px"><div class="subject-icon" style="background:#4f46e5"><i class="fas fa-square-root-variable"></i></div><strong>Calculus</strong></div></td>
+            <td style="width:200px"><div class="progress-bar" style="margin-top:0"><div class="progress-fill" style="width:75%;background:#4f46e5"></div></div><span style="font-size:11px;color:#6b7280">75%</span></td>
+            <td><i class="fas fa-clock" style="color:#9ca3af;font-size:11px"></i> 6h 30m</td>
+            <td>8 tasks</td>
+            <td><i class="fas fa-chevron-right" style="color:#d1d5db"></i></td>
+          </tr>
+          <tr>
+            <td><div style="display:flex;align-items:center;gap:10px"><div class="subject-icon" style="background:#10b981"><i class="fas fa-dna"></i></div><strong>Biology</strong></div></td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:60%;background:#10b981"></div></div><span style="font-size:11px;color:#6b7280">60%</span></td>
+            <td><i class="fas fa-clock" style="color:#9ca3af;font-size:11px"></i> 3h 20m</td>
+            <td>6 tasks</td>
+            <td><i class="fas fa-chevron-right" style="color:#d1d5db"></i></td>
+          </tr>
+          <tr>
+            <td><div style="display:flex;align-items:center;gap:10px"><div class="subject-icon" style="background:#f59e0b"><i class="fas fa-atom"></i></div><strong>Physics</strong></div></td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:40%;background:#f59e0b"></div></div><span style="font-size:11px;color:#6b7280">40%</span></td>
+            <td><i class="fas fa-clock" style="color:#9ca3af;font-size:11px"></i> 2h 45m</td>
+            <td>5 tasks</td>
+            <td><i class="fas fa-chevron-right" style="color:#d1d5db"></i></td>
+          </tr>
+          <tr>
+            <td><div style="display:flex;align-items:center;gap:10px"><div class="subject-icon" style="background:#ef4444"><i class="fas fa-landmark"></i></div><strong>History</strong></div></td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:65%;background:#ef4444"></div></div><span style="font-size:11px;color:#6b7280">65%</span></td>
+            <td><i class="fas fa-clock" style="color:#9ca3af;font-size:11px"></i> 1h 50m</td>
+            <td>4 tasks</td>
+            <td><i class="fas fa-chevron-right" style="color:#d1d5db"></i></td>
+          </tr>
+          <tr>
+            <td><div style="display:flex;align-items:center;gap:10px"><div class="subject-icon" style="background:#8b5cf6"><i class="fas fa-flask"></i></div><strong>Chemistry</strong></div></td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:55%;background:#8b5cf6"></div></div><span style="font-size:11px;color:#6b7280">55%</span></td>
+            <td><i class="fas fa-clock" style="color:#9ca3af;font-size:11px"></i> 1h 07m</td>
+            <td>5 tasks</td>
+            <td><i class="fas fa-chevron-right" style="color:#d1d5db"></i></td>
+          </tr>
+          <tr>
+            <td><div style="display:flex;align-items:center;gap:10px"><div class="subject-icon" style="background:#3b82f6"><i class="fas fa-book"></i></div><strong>English</strong></div></td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:30%;background:#3b82f6"></div></div><span style="font-size:11px;color:#6b7280">30%</span></td>
+            <td><i class="fas fa-clock" style="color:#9ca3af;font-size:11px"></i> 0h 45m</td>
+            <td>3 tasks</td>
+            <td><i class="fas fa-chevron-right" style="color:#d1d5db"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TASKS -->
+  <div class="page" id="page-tasks">
+    <div class="page-header">
+      <div><h1><i class="fas fa-list-check" style="color:#4f46e5;margin-right:8px"></i>Tasks</h1><p>View and manage your tasks.</p></div>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Task</button>
+    </div>
+    <div class="tabs">
+      <div class="tab active">All</div>
+      <div class="tab">To Do</div>
+      <div class="tab">In Progress</div>
+      <div class="tab">Completed</div>
+    </div>
+    <div class="card">
+      <p style="font-size:12px;color:#9ca3af;font-weight:600;margin-bottom:10px">TODAY</p>
+      <div class="task-item">
+        <div class="task-check"></div>
+        <div class="task-info"><div class="title">Calculus – Problem Set 5</div><div class="meta"><i class="fas fa-tag" style="color:#4f46e5;font-size:9px"></i> Calculus</div></div>
+        <span class="badge badge-red">High</span>
+      </div>
+      <p style="font-size:12px;color:#9ca3af;font-weight:600;margin:14px 0 10px">TOMORROW</p>
+      <div class="task-item">
+        <div class="task-check"></div>
+        <div class="task-info"><div class="title">Biology – Chapter 12 Notes</div><div class="meta"><i class="fas fa-tag" style="color:#10b981;font-size:9px"></i> Biology</div></div>
+        <span class="badge badge-yellow">Medium</span>
+      </div>
+      <p style="font-size:12px;color:#9ca3af;font-weight:600;margin:14px 0 10px">THIS WEEK</p>
+      <div class="task-item">
+        <div class="task-check"></div>
+        <div class="task-info"><div class="title">Physics – Lab Report</div><div class="meta"><i class="fas fa-tag" style="color:#f59e0b;font-size:9px"></i> Physics</div></div>
+        <span class="badge badge-red">High</span>
+      </div>
+      <div class="task-item">
+        <div class="task-check"></div>
+        <div class="task-info"><div class="title">History – Essay Draft</div><div class="meta"><i class="fas fa-tag" style="color:#ef4444;font-size:9px"></i> History</div></div>
+        <span class="badge badge-yellow">Medium</span>
+      </div>
+      <p style="font-size:12px;color:#9ca3af;font-weight:600;margin:14px 0 10px">NEXT WEEK</p>
+      <div class="task-item">
+        <div class="task-check"></div>
+        <div class="task-info"><div class="title">Chemistry – Practice Questions</div><div class="meta"><i class="fas fa-tag" style="color:#8b5cf6;font-size:9px"></i> Chemistry</div></div>
+        <span class="badge badge-gray">Low</span>
+      </div>
+      <div class="task-item">
+        <div class="task-check done"><i class="fas fa-check" style="font-size:9px"></i></div>
+        <div class="task-info"><div class="title" style="text-decoration:line-through;color:#9ca3af">English – Read Chapter 4</div><div class="meta"><i class="fas fa-tag" style="color:#3b82f6;font-size:9px"></i> English</div></div>
+        <span class="badge badge-gray">Low</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="page" id="page-calendar">
+    <div class="page-header">
+      <div><h1><i class="fas fa-calendar-days" style="color:#4f46e5;margin-right:8px"></i>Calendar</h1><p>View your schedule and study plan.</p></div>
+      <div style="display:flex;gap:8px">
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151">Month</button>
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151">Week</button>
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151">Day</button>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151"><i class="fas fa-chevron-left"></i></button>
+        <strong>May 2024 &nbsp;&nbsp;<button class="btn btn-primary" style="font-size:11px;padding:5px 12px">Today</button></strong>
+        <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="cal-grid">
+        <div class="cal-day-name">Sun</div><div class="cal-day-name">Mon</div><div class="cal-day-name">Tue</div>
+        <div class="cal-day-name">Wed</div><div class="cal-day-name">Thu</div><div class="cal-day-name">Fri</div><div class="cal-day-name">Sat</div>
+
+        <div class="cal-day muted">28</div><div class="cal-day muted">29</div><div class="cal-day muted">30</div>
+        <div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div>
+
+        <div class="cal-day">5</div>
+        <div class="cal-day has-event">6<div class="event-dot"></div></div>
+        <div class="cal-day">7</div><div class="cal-day">8</div>
+        <div class="cal-day has-event">9<div class="event-dot"></div></div>
+        <div class="cal-day">10</div><div class="cal-day">11</div>
+
+        <div class="cal-day">12</div><div class="cal-day">13</div><div class="cal-day">14</div>
+        <div class="cal-day">15</div>
+        <div class="cal-day today">16</div>
+        <div class="cal-day">17</div><div class="cal-day">18</div>
+
+        <div class="cal-day has-event">19<div class="event-dot"></div></div>
+        <div class="cal-day">20</div><div class="cal-day">21</div>
+        <div class="cal-day has-event">22<div class="event-dot"></div></div>
+        <div class="cal-day">23</div>
+        <div class="cal-day has-event">24<div class="event-dot"></div></div>
+        <div class="cal-day">25</div>
+
+        <div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div>
+        <div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day">31</div>
+        <div class="cal-day muted">1</div>
+      </div>
+      <div style="margin-top:16px;border-top:1px solid #e8eaf0;padding-top:14px">
+        <p style="font-size:12px;font-weight:600;color:#6b7280;margin-bottom:8px">UPCOMING EVENTS</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div class="cal-event-chip" style="background:#ede9fe;color:#4f46e5"><i class="fas fa-circle" style="font-size:7px"></i> Calculus — 2:00 PM</div>
+          <div class="cal-event-chip" style="background:#d1fae5;color:#059669"><i class="fas fa-circle" style="font-size:7px"></i> Biology — 10:00 AM</div>
+          <div class="cal-event-chip" style="background:#fef3c7;color:#d97706"><i class="fas fa-circle" style="font-size:7px"></i> Physics — 1:00 PM</div>
+          <div class="cal-event-chip" style="background:#fee2e2;color:#dc2626"><i class="fas fa-circle" style="font-size:7px"></i> History — 3:00 PM</div>
+          <div class="cal-event-chip" style="background:#ede9fe;color:#7c3aed"><i class="fas fa-circle" style="font-size:7px"></i> Chemistry — 11:00 AM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="page" id="page-notes">
+    <div class="page-header">
+      <div><h1><i class="fas fa-note-sticky" style="color:#4f46e5;margin-right:8px"></i>Notes</h1><p>All your study notes in one place.</p></div>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> New Note</button>
+    </div>
+    <div class="card" style="display:grid;grid-template-columns:220px 1fr;gap:0">
+      <div class="notes-list">
+        <div class="search-bar" style="margin-bottom:12px">
+          <i class="fas fa-search"></i>
+          <input placeholder="Search notes...">
+        </div>
+        <div style="font-size:11px;color:#9ca3af;font-weight:600;margin-bottom:6px;text-transform:uppercase">Calculus</div>
+        <div class="note-item active">
+          <div class="note-title">Calculus – Derivatives</div>
+          <div class="note-date">May 14, 2024</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">Biology – Cell Structure</div>
+          <div class="note-date">May 13, 2024</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">Physics – Newton's Laws</div>
+          <div class="note-date">May 12, 2024</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">History – World War 2</div>
+          <div class="note-date">May 11, 2024</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">Chemistry – Acids & Bases</div>
+          <div class="note-date">May 10, 2024</div>
+        </div>
+        <div class="note-item">
+          <div class="note-title">English – Essay Outline</div>
+          <div class="note-date">May 9, 2024</div>
+        </div>
+      </div>
+      <div class="note-content">
+        <h2>Calculus – Derivatives</h2>
+        <p style="font-size:12px;color:#9ca3af;margin-bottom:12px">May 14, 2024</p>
+        <p><strong>Key Rules:</strong></p>
+        <ul>
+          <li>Power Rule: d/dx (xⁿ) = nxⁿ⁻¹</li>
+          <li>Product Rule: d/dx [u·v] = u·dv/dx + v·du/dx</li>
+          <li>Chain Rule: d/dx [f(g(x))] = f'(g(x)) · g'(x)</li>
+        </ul>
+        <p style="margin-top:10px"><strong>Examples:</strong></p>
+        <ul>
+          <li>d/dx (x³) = 3x²</li>
+          <li>d/dx (sin x) = cos x</li>
+          <li>d/dx (xⁿ) = nxⁿ⁻¹</li>
+        </ul>
+        <p style="margin-top:12px;background:#fef3c7;padding:10px;border-radius:8px;color:#92400e"><i class="fas fa-lightbulb" style="color:#f59e0b"></i> Remember to practice problems from the textbook!</p>
+        <p style="font-size:11px;color:#9ca3af;margin-top:14px">Last updated: May 14, 2024, 3:30 PM</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLASHCARDS -->
+  <div class="page" id="page-flashcards">
+    <div class="page-header">
+      <div><h1><i class="fas fa-clone" style="color:#4f46e5;margin-right:8px"></i>Flashcards</h1><p>Study with flashcards.</p></div>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> New Flashcard</button>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <select style="padding:7px 12px;border:1px solid #e8eaf0;border-radius:8px;font-size:13px;outline:none">
+            <option>Calculus</option>
+            <option>Biology</option>
+            <option>Physics</option>
+          </select>
+          <div style="display:flex;gap:8px;font-size:12px">
+            <span class="badge badge-blue">All (24)</span>
+            <span class="badge badge-gray">To Review (8)</span>
+            <span class="badge badge-green">Learned (13)</span>
+          </div>
+        </div>
+        <div class="flashcard" id="fc-front">
+          <div class="question">What is the derivative of sin x?</div>
+        </div>
+        <div class="fc-controls">
+          <button class="fc-btn" onclick="prevCard()"><i class="fas fa-chevron-left"></i></button>
+          <div style="font-size:13px;color:#6b7280">1 / 24</div>
+          <div class="progress-bar" style="flex:1;margin:0 12px">
+            <div class="progress-fill" style="width:4%;background:#4f46e5"></div>
+          </div>
+          <button class="fc-btn" onclick="nextCard()"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:16px">
+          <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151" onclick="flipCard()">
+            <i class="fas fa-rotate"></i> Click to reveal
+          </button>
+        </div>
+        <div style="display:flex;justify-content:center;gap:10px;margin-top:12px">
+          <button class="fc-rating fc-hard"><i class="fas fa-xmark"></i> Hard</button>
+          <button class="fc-rating fc-good"><i class="fas fa-circle-half-stroke"></i> Good</button>
+          <button class="fc-rating fc-easy"><i class="fas fa-check"></i> Easy</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3><i class="fas fa-chart-simple" style="color:#4f46e5;margin-right:6px"></i>Session Stats</h3></div>
+        <div class="stats-row" style="grid-template-columns:repeat(3,1fr);gap:10px">
+          <div class="stat-card"><div class="label">Reviewed</div><div class="value" style="font-size:22px">1</div></div>
+          <div class="stat-card"><div class="label">Remaining</div><div class="value" style="font-size:22px">23</div></div>
+          <div class="stat-card"><div class="label">Accuracy</div><div class="value" style="font-size:22px">—</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="page" id="page-progress">
+    <div class="page-header">
+      <div><h1><i class="fas fa-chart-line" style="color:#4f46e5;margin-right:8px"></i>Progress</h1><p>View your learning progress.</p></div>
+      <div style="display:flex;gap:8px">
+        <select style="padding:7px 12px;border:1px solid #e8eaf0;border-radius:8px;font-size:13px;outline:none"><option>This Week</option><option>This Month</option></select>
+        <select style="padding:7px 12px;border:1px solid #e8eaf0;border-radius:8px;font-size:13px;outline:none"><option>All Subjects</option><option>Calculus</option></select>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card"><div class="label"><i class="fas fa-clock" style="color:#4f46e5"></i> Study Time</div><div class="value">14h 32m</div><div class="sub"><i class="fas fa-arrow-up"></i> 2h 15m vs last week</div></div>
+      <div class="stat-card"><div class="label"><i class="fas fa-circle-check" style="color:#10b981"></i> Tasks Completed</div><div class="value">28</div><div class="sub"><i class="fas fa-arrow-up"></i> +5 from last week</div></div>
+      <div class="stat-card"><div class="label"><i class="fas fa-fire" style="color:#ef4444"></i> Day Streak</div><div class="value">7</div><div class="sub fire"><i class="fas fa-fire"></i> Keep it up!</div></div>
+      <div class="stat-card"><div class="label"><i class="fas fa-bullseye" style="color:#8b5cf6"></i> Goals Met</div><div class="value">3/4</div><div class="sub" style="color:#6b7280">75% this week</div></div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header"><h3><i class="fas fa-chart-bar" style="color:#4f46e5;margin-right:6px"></i>Study Hours</h3></div>
+        <div class="bar-chart" style="height:110px">
+          <div class="bar-wrap"><div class="bar" style="height:50%"></div><span class="bar-label">Mon</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:38%"></div><span class="bar-label">Tue</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:72%"></div><span class="bar-label">Wed</span></div>
+          <div class="bar-wrap"><div class="bar active" style="height:90%"></div><span class="bar-label">Thu</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:30%"></div><span class="bar-label">Fri</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:10%"></div><span class="bar-label">Sat</span></div>
+          <div class="bar-wrap"><div class="bar" style="height:10%"></div><span class="bar-label">Sun</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3><i class="fas fa-bars-progress" style="color:#4f46e5;margin-right:6px"></i>Subject Progress</h3></div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#4f46e5;width:22px;height:22px;font-size:10px"><i class="fas fa-square-root-variable"></i></div>
+          <div class="progress-info"><div class="name" style="font-size:12px">Calculus</div><div class="progress-bar"><div class="progress-fill" style="width:75%;background:#4f46e5"></div></div></div>
+          <span class="progress-pct">75%</span>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#10b981;width:22px;height:22px;font-size:10px"><i class="fas fa-dna"></i></div>
+          <div class="progress-info"><div class="name" style="font-size:12px">Biology</div><div class="progress-bar"><div class="progress-fill" style="width:60%;background:#10b981"></div></div></div>
+          <span class="progress-pct">60%</span>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#f59e0b;width:22px;height:22px;font-size:10px"><i class="fas fa-atom"></i></div>
+          <div class="progress-info"><div class="name" style="font-size:12px">Physics</div><div class="progress-bar"><div class="progress-fill" style="width:40%;background:#f59e0b"></div></div></div>
+          <span class="progress-pct">40%</span>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#ef4444;width:22px;height:22px;font-size:10px"><i class="fas fa-landmark"></i></div>
+          <div class="progress-info"><div class="name" style="font-size:12px">History</div><div class="progress-bar"><div class="progress-fill" style="width:65%;background:#ef4444"></div></div></div>
+          <span class="progress-pct">65%</span>
+        </div>
+        <div class="progress-item">
+          <div class="subject-icon" style="background:#8b5cf6;width:22px;height:22px;font-size:10px"><i class="fas fa-flask"></i></div>
+          <div class="progress-info"><div class="name" style="font-size:12px">Chemistry</div><div class="progress-bar"><div class="progress-fill" style="width:55%;background:#8b5cf6"></div></div></div>
+          <span class="progress-pct">55%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOALS -->
+  <div class="page" id="page-goals">
+    <div class="page-header">
+      <div><h1><i class="fas fa-bullseye" style="color:#4f46e5;margin-right:8px"></i>Goals</h1><p>Set and track your goals.</p></div>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> New Goal</button>
+    </div>
+    <div class="tabs">
+      <div class="tab active">All</div>
+      <div class="tab">Active</div>
+      <div class="tab">Completed</div>
+    </div>
+    <div class="card">
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-title"><i class="fas fa-clock" style="color:#4f46e5;margin-right:6px"></i>Study 20 hours this week</div>
+          <span class="badge badge-yellow">In Progress</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:73%;background:#4f46e5"></div></div>
+        <div class="goal-meta"><span>14h 32m / 20h</span><span>•</span><span>Due May 19, 2024</span></div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-title"><i class="fas fa-list-check" style="color:#10b981;margin-right:6px"></i>Complete 30 tasks this week</div>
+          <span class="badge badge-yellow">In Progress</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:80%;background:#10b981"></div></div>
+        <div class="goal-meta"><span>28 / 30</span><span>•</span><span>Due May 19, 2024</span></div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-title"><i class="fas fa-book-open" style="color:#f59e0b;margin-right:6px"></i>Read 2 books this month</div>
+          <span class="badge badge-yellow">In Progress</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:50%;background:#f59e0b"></div></div>
+        <div class="goal-meta"><span>1 / 2</span><span>•</span><span>Due May 31, 2024</span></div>
+      </div>
+      <div class="goal-item">
+        <div class="goal-header">
+          <div class="goal-title"><i class="fas fa-fire" style="color:#ef4444;margin-right:6px"></i>Maintain a 7-day study streak</div>
+          <span class="badge badge-green"><i class="fas fa-check" style="font-size:9px"></i> Completed</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:100%;background:#10b981"></div></div>
+        <div class="goal-meta"><span>7 / 7 days</span><span>•</span><span style="color:#10b981">Goal achieved!</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="page" id="page-settings">
+    <div class="page-header">
+      <div><h1><i class="fas fa-gear" style="color:#4f46e5;margin-right:8px"></i>Settings</h1><p>Manage your account and preferences.</p></div>
+    </div>
+    <div class="tabs">
+      <div class="tab active">Profile</div>
+      <div class="tab">Preferences</div>
+      <div class="tab">Notifications</div>
+      <div class="tab">Appearance</div>
+    </div>
+    <div class="card">
+      <div class="settings-section">
+        <h3><i class="fas fa-user" style="color:#4f46e5;margin-right:6px"></i>Profile Information</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Name</label><input type="text" value="Alex"></div>
+          <div class="form-group"><label>Email</label><input type="email" value="alex@example.com"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Timezone</label>
+            <select style="padding:9px 12px;border:1px solid #e8eaf0;border-radius:8px;font-size:13px;outline:none">
+              <option>UTC-5 (EST)</option><option>UTC+0 (GMT)</option><option>UTC+1 (CET)</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Language</label>
+            <select style="padding:9px 12px;border:1px solid #e8eaf0;border-radius:8px;font-size:13px;outline:none">
+              <option>English</option><option>Spanish</option><option>French</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary"><i class="fas fa-floppy-disk"></i> Save Changes</button>
+      </div>
+      <div class="settings-section">
+        <h3><i class="fas fa-lock" style="color:#6b7280;margin-right:6px"></i>Account</h3>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151;width:fit-content"><i class="fas fa-key"></i> Change Password</button>
+          <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151;width:fit-content"><i class="fas fa-file-export"></i> Export Data</button>
+          <button class="btn btn-danger" style="width:fit-content"><i class="fas fa-trash"></i> Delete Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
 
 
 
