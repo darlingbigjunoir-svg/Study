@@ -1,113 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flashcards - StudyTrack</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- App Layout -->
-  <div>
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="logo">
+    <i class="fas fa-book-open-reader"></i>
+    <span>StudyTrack</span>
+  </div>
+  <a class="nav-item" href="index.html" onclick="showPage('dashboard')"><i class="fas fa-house"></i> Dashboard</a>
+  <a class="nav-item" href="subject.html" onclick="showPage('subjects')"><i class="fas fa-layer-group"></i> Subjects</a>
+  <a class="nav-item" href="task.html" onclick="showPage('tasks')"><i class="fas fa-list-check"></i> Tasks</a>
+  <a class="nav-item" href="calendar.html" onclick="showPage('calendar')"><i class="fas fa-calendar-days"></i> Calendar</a>
+  <a class="nav-item" href="note.html" onclick="showPage('notes')"><i class="fas fa-note-sticky"></i> Notes</a>
+  <a class="nav-item active" href="flashcard.html" onclick="showPage('flashcards')"><i class="fas fa-clone"></i> Flashcards</a>
+  <a class="nav-item" href="progress.html" onclick="showPage('progress')"><i class="fas fa-chart-line"></i> Progress</a>
+  <a class="nav-item" href="goals.html" onclick="showPage('goals')"><i class="fas fa-bullseye"></i> Goals</a>
+  <a class="nav-item" href="settings.html" onclick="showPage('settings')"><i class="fas fa-gear"></i> Settings</a>
+  <div class="sidebar-bottom">
+    <div class="avatar">S</div>
+    <div class="avatar-info">
+      <span>Student</span>
+      <small>View Profile</small>
+    </div>
+  </div>
+</aside>
 
-    <!-- Sidebar -->
-    <nav>
-      <h2><i class="fa-solid fa-book-open"></i> StudyTrack</h2>
-      <ul>
-        <li><a href="#"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-        <li><a href="#"><i class="fa-solid fa-layer-group"></i> Subjects</a></li>
-        <li><a href="#"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
-        <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Calendar</a></li>
-        <li><a href="#"><i class="fa-solid fa-note-sticky"></i> Notes</a></li>
-        <li><a href="#"><i class="fa-solid fa-clone"></i> Flashcards</a></li>
-        <li><a href="#"><i class="fa-solid fa-chart-line"></i> Progress</a></li>
-        <li><a href="#"><i class="fa-solid fa-bullseye"></i> Goals</a></li>
-        <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
-      </ul>
-    </nav>
+<!-- Main Content -->
+<main class="main">
 
-    <!-- Main Content -->
-    <main>
+  <!-- FLASHCARDS -->
+  <div class="page active" id="page-flashcards">
 
-      <!-- Page Header -->
-      <header>
-        <div>
-          <h1><i class="fa-solid fa-clone"></i> Flashcards</h1>
-          <p>Study with flashcards.</p>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div>
+        <h1><i class="fas fa-clone" style="color:#4f46e5;margin-right:8px"></i>Flashcards</h1>
+        <p>Study with flashcards.</p>
+      </div>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> New Flashcard</button>
+    </div>
+
+    <div class="grid-2">
+
+      <!-- Left: Flashcard Viewer -->
+      <div>
+
+        <!-- Subject Selector + Tabs -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <select style="padding:7px 12px;border:1px solid #e8eaf0;border-radius:8px;font-size:13px;outline:none">
+            <option>Calculus</option>
+            <option>Biology</option>
+            <option>Physics</option>
+            <option>Chemistry</option>
+            <option>History</option>
+            <option>English</option>
+          </select>
+          <div style="display:flex;gap:8px;font-size:12px">
+            <span class="badge badge-blue">All (24)</span>
+            <span class="badge badge-gray">To Review (6)</span>
+            <span class="badge badge-green">Learned (18)</span>
+          </div>
         </div>
-        <button type="button">
-          <i class="fa-solid fa-plus"></i> New Flashcard
-        </button>
-      </header>
 
-      <!-- Filters & Tabs -->
-      <section>
-        <!-- Subject Dropdown -->
-        <label for="subject-select"><i class="fa-solid fa-book"></i></label>
-        <select id="subject-select" name="subject">
-          <option value="calculus">Calculus</option>
-          <option value="physics">Physics</option>
-          <option value="chemistry">Chemistry</option>
-        </select>
+        <!-- Flashcard Face -->
+        <div class="flashcard" id="fc-front">
+          <p style="font-size:11px;color:#9ca3af;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em">Front</p>
+          <div class="question">What is the derivative of sin x?</div>
+        </div>
 
-        <!-- Tab Navigation -->
-        <nav>
-          <a href="#"><i class="fa-solid fa-border-all"></i> All (24)</a>
-          <a href="#"><i class="fa-solid fa-rotate"></i> To Review (6)</a>
-          <a href="#"><i class="fa-solid fa-check-circle"></i> Learned (18)</a>
-        </nav>
-      </section>
+        <!-- Navigation + Progress -->
+        <div class="fc-controls">
+          <button class="fc-btn" onclick="prevCard()"><i class="fas fa-chevron-left"></i></button>
+          <div style="font-size:13px;color:#6b7280">1 / 24</div>
+          <div class="progress-bar" style="flex:1;margin:0 12px">
+            <div class="progress-fill" style="width:4%;background:#4f46e5"></div>
+          </div>
+          <button class="fc-btn" onclick="nextCard()"><i class="fas fa-chevron-right"></i></button>
+        </div>
 
-      <!-- Flashcard Viewer -->
-      <section>
-
-        <p><i class="fa-regular fa-square"></i> Front</p>
-
-        <!-- Card Navigation -->
-        <div>
-          <button type="button" aria-label="Previous card">
-            <i class="fa-solid fa-chevron-left"></i>
+        <!-- Reveal Button -->
+        <div style="display:flex;justify-content:center;margin-top:16px">
+          <button class="btn" style="border:1px solid #e8eaf0;background:#fff;color:#374151" onclick="flipCard()">
+            <i class="fas fa-eye"></i> Click to reveal
           </button>
+        </div>
 
-          <!-- Card Face -->
-          <div>
-            <h2>What is the derivative of sin x?</h2>
-            <p>
-              <i class="fa-regular fa-eye"></i> Click to reveal
-            </p>
+        <!-- Rating Buttons -->
+        <div style="display:flex;justify-content:center;gap:10px;margin-top:12px">
+          <button class="fc-rating fc-hard"><i class="fas fa-xmark"></i> Hard</button>
+          <button class="fc-rating fc-good"><i class="fas fa-circle-half-stroke"></i> Good</button>
+          <button class="fc-rating fc-easy"><i class="fas fa-check"></i> Easy</button>
+        </div>
+
+      </div>
+
+      <!-- Right: Session Stats -->
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="fas fa-chart-simple" style="color:#4f46e5;margin-right:6px"></i>Session Stats</h3>
+        </div>
+        <div class="stats-row" style="grid-template-columns:repeat(3,1fr);gap:10px">
+          <div class="stat-card">
+            <div class="label"><i class="fas fa-rotate" style="color:#4f46e5"></i> Reviewed</div>
+            <div class="value" style="font-size:22px">1</div>
+          </div>
+          <div class="stat-card">
+            <div class="label"><i class="fas fa-hourglass-half" style="color:#f59e0b"></i> Remaining</div>
+            <div class="value" style="font-size:22px">23</div>
+          </div>
+          <div class="stat-card">
+            <div class="label"><i class="fas fa-bullseye" style="color:#10b981"></i> Accuracy</div>
+            <div class="value" style="font-size:22px">—</div>
+          </div>
+        </div>
+
+        <!-- Rating Breakdown -->
+        <div style="margin-top:16px;border-top:1px solid #e8eaf0;padding-top:14px">
+          <p style="font-size:12px;font-weight:600;color:#6b7280;margin-bottom:10px">RATING BREAKDOWN</p>
+
+          <div class="progress-item">
+            <div class="subject-icon" style="background:#ef4444;width:22px;height:22px;font-size:10px">
+              <i class="fas fa-xmark"></i>
+            </div>
+            <div class="progress-info">
+              <div class="name" style="font-size:12px">Hard</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:0%;background:#ef4444"></div></div>
+            </div>
+            <span class="progress-pct">0</span>
           </div>
 
-          <button type="button" aria-label="Next card">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
+          <div class="progress-item">
+            <div class="subject-icon" style="background:#f59e0b;width:22px;height:22px;font-size:10px">
+              <i class="fas fa-circle-half-stroke"></i>
+            </div>
+            <div class="progress-info">
+              <div class="name" style="font-size:12px">Good</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:0%;background:#f59e0b"></div></div>
+            </div>
+            <span class="progress-pct">0</span>
+          </div>
+
+          <div class="progress-item">
+            <div class="subject-icon" style="background:#10b981;width:22px;height:22px;font-size:10px">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="progress-info">
+              <div class="name" style="font-size:12px">Easy</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:0%;background:#10b981"></div></div>
+            </div>
+            <span class="progress-pct">0</span>
+          </div>
         </div>
 
-        <!-- Card Progress -->
-        <p>
-          <i class="fa-solid fa-bars-progress"></i> 1 / 24
-        </p>
-        <progress value="1" max="24">1 of 24</progress>
+        <!-- Subject Progress -->
+        <div style="margin-top:16px;border-top:1px solid #e8eaf0;padding-top:14px">
+          <p style="font-size:12px;font-weight:600;color:#6b7280;margin-bottom:10px">SUBJECT PROGRESS</p>
+          <div class="progress-item">
+            <div class="subject-icon" style="background:#4f46e5;width:22px;height:22px;font-size:10px">
+              <i class="fas fa-square-root-variable"></i>
+            </div>
+            <div class="progress-info">
+              <div class="name" style="font-size:12px">Calculus</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:75%;background:#4f46e5"></div></div>
+            </div>
+            <span class="progress-pct">75%</span>
+          </div>
+          <div class="progress-item">
+            <div class="subject-icon" style="background:#10b981;width:22px;height:22px;font-size:10px">
+              <i class="fas fa-dna"></i>
+            </div>
+            <div class="progress-info">
+              <div class="name" style="font-size:12px">Biology</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:60%;background:#10b981"></div></div>
+            </div>
+            <span class="progress-pct">60%</span>
+          </div>
+          <div class="progress-item">
+            <div class="subject-icon" style="background:#f59e0b;width:22px;height:22px;font-size:10px">
+              <i class="fas fa-atom"></i>
+            </div>
+            <div class="progress-info">
+              <div class="name" style="font-size:12px">Physics</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:40%;background:#f59e0b"></div></div>
+            </div>
+            <span class="progress-pct">40%</span>
+          </div>
+        </div>
 
-      </section>
-
-      <!-- Rating Buttons -->
-      <section>
-        <button type="button">
-          <i class="fa-solid fa-xmark"></i> Hard
-        </button>
-        <button type="button">
-          <i class="fa-regular fa-face-meh"></i> Good
-        </button>
-        <button type="button">
-          <i class="fa-solid fa-check"></i> Easy
-        </button>
-      </section>
-
-    </main>
-
+      </div>
+    </div>
   </div>
 
+</main>
+
+<script src="js/script.js"></script>
 </body>
 </html>
